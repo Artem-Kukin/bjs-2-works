@@ -27,11 +27,16 @@ function summElementsWorker(...arr) {
     const element = arr[i];
     sum += element;
   }
-  return { sum: sum };
+  return sum;
 }
 
 
 function differenceMaxMinWorker(...arr) {
+
+  if (arr.length === 0) {
+    return 0;
+  }
+
   let min = arr[0];
   let max = arr[0];
   for (let i = 0; i < arr.length; i++) {
@@ -52,9 +57,9 @@ function differenceEvenOddWorker(...arr) {
   for (let i = 0; i < arr.length; i++) {
     const element = arr[i];
     if (element % 2 === 0) {
-      sumEvenElement++;
+      sumEvenElement += element;
     } else {
-      sumOddElement++;
+      sumOddElement += element;
     }
   }
   return (sumEvenElement - sumOddElement);
